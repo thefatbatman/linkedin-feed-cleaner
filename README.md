@@ -28,15 +28,15 @@ This is one of the posts which talks about this: [RANT - Linkedin people you can
 
 ## How to Contribute?
 ### 🌟 Adding spammers' profile links to the list
-1. Get the `memberId` like this.
+1. Right click on any user's name, and get the `memberId`. It looks like this `urn:li:fs_miniProfile:<memberId>`. We only want the last part.
   ![](./guide-for-memberId.png)
-1. Edit this file and add new users to [this file](https://github.com/thefatbatman/linkedin-feed-cleaner/blob/main/blocked-users-list/default.json)
-1. Create a Pull Request with your changes
-1. Would need some evidence of their spam, which includes (but not limited to)
-  - Posting unnecessarily polls.
-  - Posting sponsored links/content without informing in the post misleading the followers.
-  - Spammy posts
-  - [Feel free to add more..]
+1. Add new users to [this file](https://github.com/thefatbatman/linkedin-feed-cleaner/blob/main/blocked-users-list/default.json). 
+1. Create a Pull Request with your changes.
+1. Would need some evidence of their spam, which includes (but not limited to):
+    - Posting unnecessarily polls.
+    - Posting sponsored links/content without informing in the post misleading the followers.
+    - Spammy posts
+    - [Feel free to add more..]
 
 ### 🌟 Adding new features to the Extension
 1. Fork this repository.
