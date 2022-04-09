@@ -1,5 +1,5 @@
 # LinkedIn Feed Cleaner
-Chrome extension to remove unwanted posts from your linkedin feed
+Chrome extension to block spammy users from your feed.
 
 ## Why this exists?
 You might have seen that LinkedIn has turned into a mix of Quora, Facebook and TikTok. Everyone is trying to become an "influencer" and gain followers.
