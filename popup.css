@@ -1,0 +1,47 @@
+.body {
+  width: 300px;
+  margin: 0 auto;
+  background-color: #1e1d1d;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+a{
+  color: #6e9ef2;
+}
+
+a:hover{
+  color: #5182d7;
+}
+
+:root {
+  --button-bg-color: #5788dd;
+  --button-bg-hover-color: #4172c7;
+  --button-bg-active-color: #2955a2;
+  --button-text-color: white;
+  --h1-text-color: white;
+}
+
+button {
+  padding: 0 6px;
+  font-size: 16px;
+  height: 24px;
+  line-height: 24px;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--button-bg-color);
+  box-shadow: 5px 5px 12px 4px rgba(0, 0, 0, 0.24);
+  color: var(--button-text-color);
+  outline: none;
+  transition: all 0.5s;
+  letter-spacing: 0.8px;
+}
+button:hover {
+  background-color: var(--button-bg-hover-color);
+  cursor: pointer;
+}
+button:active {
+  background-color: var(--button-bg-active-color);
+  transform: scale(0.95);
+}

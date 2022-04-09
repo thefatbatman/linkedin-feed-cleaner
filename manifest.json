@@ -1,0 +1,36 @@
+{
+  "name": "LinkedIn Feed Cleaner",
+  "description": "Remove unwanted posts from your linkedin feed",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.linkedin.com/*"
+      ],
+      "css": [
+        "snackbar.css"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/icon16.png",
+      "32": "/images/icon32.png",
+      "48": "/images/icon48.png",
+      "128": "/images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/icon16.png",
+    "32": "/images/icon32.png",
+    "48": "/images/icon48.png",
+    "128": "/images/icon128.png"
+  }
+}
