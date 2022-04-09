@@ -52,8 +52,8 @@ function linkedInScripts() {
     var cookies = document.cookie;
 
     var csrfToken = _getCSRFToken().slice(1, -1);
-    console.log(csrfToken);
-    var linkedinBlockProfileEndpoint = `https://www.google.com/psettings/member-blocking/block?memberId=${member.memberId}&trk=block-profile&csrfToken=${csrfToken}`;
+    console.log({ csrfToken });
+    var linkedinBlockProfileEndpoint = `https://www.linkedin.com/psettings/member-blocking/block?memberId=${member.memberId}&trk=block-profile&csrfToken=${csrfToken}`;
 
     fetch(linkedinBlockProfileEndpoint, {
       method: "POST",
@@ -108,30 +108,30 @@ function linkedInScripts() {
   }
 
   function _loadLinkedInBlockedkProfileList() {
-    var blockedProfileList = [];
-
-    // TODO: Replace the URL with the URL from github.
-    fetch(``, {
-      method: "GET"
-    }).then(response => {
-      return response.json();
-    }).then(data => {
-      blockedProfileList = data;
-      console.log(blockedProfileList);
-    }).catch(error => {
-      console.log(error);
+    return new Promise((resolve, reject) => {
+      fetch(`https://raw.githubusercontent.com/thefatbatman/linkedin-feed-cleaner/main/blocked-users-list/default.json`, {
+        method: "GET"
+      }).then(response => {
+        return response.json();
+      }).then(data => {
+        console.log(data);
+        resolve(data);
+      }).catch(error => {
+        console.log(error);
+        reject(error);
+      });
     });
-
-    return blockedProfileList;
   }
 
   function _init() {
 
+    // This is simply adding some basic html on linkedIn's page
     _addToastNotificationHTMLToPage();
 
-    _loadLinkedInBlockedkProfileList();
-
-    _runForEachItemInArrayWithDelay(memberList, delayBeforeBlocking, _makeACallToBlockMemberOnLinkedIn);
+    // This will load the list of people to block from the API and then block them.
+    _loadLinkedInBlockedkProfileList().then(({ users }) => {
+      _runForEachItemInArrayWithDelay(users, delayBeforeBlocking, _makeACallToBlockMemberOnLinkedIn);
+    });
   }
 
   _init();
