@@ -78,7 +78,6 @@ function linkedInScripts() {
       }
     }
     ).then(response => {
-      console.log("Blocked that motherfucker: ", member.name);
       _showToastNotification(`Successfully blocked: ${member.name}`, "success");
       console.log(response);
     }).catch(error => {
